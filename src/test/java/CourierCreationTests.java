@@ -8,8 +8,8 @@ import steps.CourierApiSteps;
 
 import java.net.HttpURLConnection;
 
-import static constants.UrlConstants.BASE_URI;
-import static constants.UrlConstants.COURIER_BASE_PATH;
+//import static constants.UrlConstants.BASE_URI;
+//import static constants.UrlConstants.COURIER_BASE_PATH;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertTrue;
 
@@ -20,8 +20,8 @@ public class CourierCreationTests {
 
     @Before
     public void setUp() {
-        RestAssured.baseURI = BASE_URI;
-        RestAssured.basePath = COURIER_BASE_PATH;
+//        RestAssured.baseURI = BASE_URI;
+//        RestAssured.basePath = COURIER_BASE_PATH;
         courierApiSteps.setCourier(courier);
     }
 
@@ -55,14 +55,14 @@ public class CourierCreationTests {
     @Test
     @DisplayName("Ошибка при создании курьера без указания логина")
     public void testCreateCourierWithoutLoginFails() {
-        courierApiSteps.setCourier(new Courier("", "password", "Natalia"));
+        courierApiSteps.setCourier(new Courier("", "password", "Vladislav"));
         verifyResponse(HttpURLConnection.HTTP_BAD_REQUEST, "Недостаточно данных для создания учетной записи");
     }
 
     @Test
     @DisplayName("Ошибка при создании курьера без указания пароля")
     public void testCreateCourierWithoutPasswordFails() {
-        courierApiSteps.setCourier(new Courier("Natali", "", "Natalia"));
+        courierApiSteps.setCourier(new Courier("Natali", "", "Vladislav"));
         verifyResponse(HttpURLConnection.HTTP_BAD_REQUEST, "Недостаточно данных для создания учетной записи");
     }
 
