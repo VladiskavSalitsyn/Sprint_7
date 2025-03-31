@@ -6,8 +6,6 @@ import steps.OrderApiSteps;
 
 import java.net.HttpURLConnection;
 
-//import static constants.UrlConstants.BASE_URI;
-//import static constants.UrlConstants.ORDERS_BASE_PATH;
 import static org.hamcrest.Matchers.notNullValue;
 
 public class OrderGetTest {
@@ -15,8 +13,6 @@ public class OrderGetTest {
 
     @Before
     public void setUp() {
-//        RestAssured.baseURI = BASE_URI;
-//        RestAssured.basePath = ORDERS_BASE_PATH;
         orderApiSteps = new OrderApiSteps();
     }
 

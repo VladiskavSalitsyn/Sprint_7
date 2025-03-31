@@ -8,8 +8,6 @@ import steps.CourierApiSteps;
 
 import java.net.HttpURLConnection;
 
-//import static constants.UrlConstants.BASE_URI;
-//import static constants.UrlConstants.COURIER_BASE_PATH;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
@@ -20,8 +18,6 @@ public class CourierLoginTests {
 
     @Before
     public void setUp() {
-//        RestAssured.baseURI = BASE_URI;
-//        RestAssured.basePath = COURIER_BASE_PATH;
         courierApiSteps.setCourier(validCourier);
     }
 
